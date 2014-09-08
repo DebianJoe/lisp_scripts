@@ -69,3 +69,10 @@
   (save-excursion
     (goto-char (line-beginning-position)) (insert "######")
     ))
+
+(defun quote ()
+  "make a section into a blockquote"
+  (interactive)
+  (save-excursion
+    (goto-char (line-beginning-position)) (insert "> ")
+    ))
