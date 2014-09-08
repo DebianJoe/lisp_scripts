@@ -30,20 +30,20 @@
     (goto-char start) (insert "*")
     ))
 
-(defun H1 (start end)
-  "Insert Largest Header"
-  (interactive "r")
+(defun H1 ()
+  "Insert Largest Header at start of line"
+  (interactive)
   (save-excursion
-    (goto-char start) (insert "#")
+    (goto-char (line-beginning-position)) (insert "#")
     ))
-(defun H2 (start end)
-  "Insert an H2 Header"
-  (interactive "r")
+(defun H2 ()
+  "Insert an H2 Header at start of line"
+  (interactive)
   (save-excursion
-    (goto-char start) (insert "##")
+    (goto-char (line-beginning-position)) (insert "##")
     ))
 (defun H3 (start end)
-  "Insert an H3 Header"
+  "Insert an H3 Header at start of line"
   (interactive "r")
   (save-excursion
     (goto-char start) (insert "###")
