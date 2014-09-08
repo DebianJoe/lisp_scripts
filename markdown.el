@@ -1,3 +1,6 @@
+;; A series of loadable functions desigend to help with formatting ;;
+;; github-flavored markdown ;;
+
 (defun strikethrough (start end)
   "Insert a strikethrough in selected region"
   (interactive "r")
@@ -42,27 +45,27 @@
   (save-excursion
     (goto-char (line-beginning-position)) (insert "##")
     ))
-(defun H3 (start end)
+(defun H3 ()
   "Insert an H3 Header at start of line"
-  (interactive "r")
+  (interactive)
   (save-excursion
-    (goto-char start) (insert "###")
+    (goto-char (line-beginning-position)) (insert "###")
     ))
-(defun H4 (start end)
-  "Insert an H4 Header"
-  (interactive "r")
+(defun H4 ()
+  "Insert an H4 Header at start of line"
+  (interactive)
   (save-excursion
-    (goto-char start) (insert "####")
+    (goto-char (line-beginning-position)) (insert "####")
     ))
-(defun H5 (start end)
-  "Insert an H5 Header"
-  (interactive "r")
+(defun H5 ()
+  "Insert an H5 Header at start of line"
+  (interactive)
   (save-excursion
-    (goto-char start) (insert "#####")
+    (goto-char (line-beginning-position)) (insert "#####")
     ))
-(defun H6 (start end)
-  "Insert an H6 Header"
-  (interactive "r")
+(defun H6 ()
+  "Insert an H6 Header at start of line"
+  (interactive)
   (save-excursion
-    (goto-char start) (insert "######")
+    (goto-char (line-beginning-position)) (insert "######")
     ))
