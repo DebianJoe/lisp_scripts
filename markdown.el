@@ -13,8 +13,8 @@
   "Take selected text, put in codeblock"
   (interactive "r")
   (save-excursion
-    (goto-char end) (insert "```")
-    (goto-char start) (insert "```")
+    (goto-char end) (insert "\n```\n")
+    (goto-char start) (insert "```\n")
     ))
 
 (defun bold (start end)
@@ -77,3 +77,9 @@
   (save-excursion
     (goto-char (line-beginning-position)) (insert "> ")
     ))
+
+(defun linebreak ()
+  "Insert a graphical line below cursor"
+  (interactive)
+  (goto-char (line-end-position)) (insert "\n---\n")
+  )
