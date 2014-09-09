@@ -33,44 +33,45 @@
     (goto-char start) (insert "*")
     ))
 
+;; Header Insertions ;;
 (defun H1 ()
   "Insert Largest Header at start of line"
   (interactive)
   (save-excursion
-    (goto-char (line-beginning-position)) (insert "#")
+    (goto-char (line-beginning-position)) (insert "# ")
     ))
 (defun H2 ()
   "Insert an H2 Header at start of line"
   (interactive)
   (save-excursion
-    (goto-char (line-beginning-position)) (insert "##")
+    (goto-char (line-beginning-position)) (insert "## ")
     ))
 (defun H3 ()
   "Insert an H3 Header at start of line"
   (interactive)
   (save-excursion
-    (goto-char (line-beginning-position)) (insert "###")
+    (goto-char (line-beginning-position)) (insert "### ")
     ))
 (defun H4 ()
   "Insert an H4 Header at start of line"
   (interactive)
   (save-excursion
-    (goto-char (line-beginning-position)) (insert "####")
+    (goto-char (line-beginning-position)) (insert "#### ")
     ))
 (defun H5 ()
   "Insert an H5 Header at start of line"
   (interactive)
   (save-excursion
-    (goto-char (line-beginning-position)) (insert "#####")
+    (goto-char (line-beginning-position)) (insert "##### ")
     ))
 (defun H6 ()
   "Insert an H6 Header at start of line"
   (interactive)
   (save-excursion
-    (goto-char (line-beginning-position)) (insert "######")
+    (goto-char (line-beginning-position)) (insert "###### ")
     ))
 
-(defun quote ()
+(defun blockquote ()
   "make a section into a blockquote"
   (interactive)
   (save-excursion
