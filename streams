@@ -1,4 +1,0 @@
-;; Managing online streams in CL ;;
-
-(defun set-stream (title url description)
-       (list :title title :url url :desription description))
