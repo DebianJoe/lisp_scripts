@@ -9,10 +9,11 @@
 (setq agnt '"http://xstream1.somafm.com:8002")  ;; Secret Agent
 (setq ipop '"http://uwstream3.somafm.com:8090") ;; Indy Pop Rocks
 (setq ffor '"http://xstream1.somafm.com:7400")  ;; Folk Forward
+(setq bagr '"http://uwstream3.somafm.com:9090") ;; BAGeL Radio
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
-  "start a cliqhop direct stream in new buffer"
+  "start a SomaFM Cliqhop (idm) direct stream in new buffer"
   (message "Soma FM's Cliqhop")
   (interactive "p")
       (start-process "cliqhop"
@@ -21,7 +22,7 @@
 		     "%s" chop))
 
 (defun eplayer-dubstep (station)
-  "start a dubstep byeond radio stream in new buffer"
+  "start a Soma FM Dubstep Beyond (bass music) radio stream in new buffer"
   (message "Soma FM's Dubstep Beyond")
   (interactive "p")
       (start-process "dubstep"
@@ -30,7 +31,7 @@
 		     "%s" dubs))
 
 (defun eplayer-7inchsoul (station)
-  "start a seven inch soul (off of 45's) radio stream in new buffer"
+  "start a Soma FM Seven Inch Soul (off of 45's) radio stream in new buffer"
   (message "Soma FM's Seven Inch Soul, music off 45s")
   (interactive "p")
       (start-process "7inch_soul"
@@ -39,7 +40,7 @@
 		     "%s" 7iso))
 
 (defun eplayer-doomed (station)
-  "start a Doomed (industrial and darker ambient) radio stream in new buffer"
+  "start a Soma FM Doomed (industrial and darker ambient) radio stream in new buffer"
   (message "Soma FM's Doomed, Industrial Madness")
   (interactive "p")
       (start-process "Doomed"
@@ -48,7 +49,7 @@
 		     "%s" doom))
 
 (defun eplayer-sonic (station)
-  "start a Sonic Universe radio stream in new buffer"
+  "start a Soma FM Sonic Universe radio stream in new buffer"
   (message "Soma FM's Sonic Universe, Transcending Jazz")
   (interactive "p")
       (start-process "Sonic_Universe"
@@ -57,7 +58,7 @@
 		     "%s" suni))
 
 (defun eplayer-secretagent (station)
-  "start a Secret Agent radio stream in new buffer"
+  "start a Soma FM Secret Agent radio stream in new buffer"
   (message "Soma FM's Secret Agent, songs for spies")
   (interactive "p")
       (start-process "Secret_Agent"
@@ -82,3 +83,12 @@
 		     "Folk_Forward"
 		     "mpg123"
 		     "%s" ffor))
+
+(defun eplayer-bagel_radio (station)
+  "start a Soma FM BAGeL Radio (Alt Rock) radio stream in new buffer"
+  (message "Soma FM's BAGeL Radio, Alt Rock")
+  (interactive "p")
+      (start-process "BAGeL_radio"
+		     "BAGeL_radio"
+		     "mpg123"
+		     "%s" bagr))
