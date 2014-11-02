@@ -1,18 +1,19 @@
 ;; Creates an new interactive buffer for music from SomaFM;;
 
-;; Have these at top in case they need editing. ;;
-(setq chop '"http://xstream1.somafm.com:8062")  ;; Cliqhop
-(setq dubs '"http://uwstream2.somafm.com:8406") ;; Dubstep Beyond
-(setq 7iso '"http://uwstream2.somafm.com:7770") ;; Seven Inch Soul
-(setq doom '"http://xstream1.somafm.com:8300")  ;; Doomed
-(setq suni '"http://uwstream2.somafm.com:8600") ;; Sonic Universe
-(setq agnt '"http://xstream1.somafm.com:8002")  ;; Secret Agent
-(setq ipop '"http://uwstream3.somafm.com:8090") ;; Indy Pop Rocks
-(setq ffor '"http://xstream1.somafm.com:7400")  ;; Folk Forward
-(setq bagr '"http://uwstream3.somafm.com:9090") ;; BAGeL Radio
-(setq digi '"http://xstream1.somafm.com:8900")  ;; Digitalis
-(setq grsl '"http://uwstream1.somafm.com:80")   ;; Groove Salad
-(setq lush '"http://uwstream2.somafm.com:8800") ;; Lush
+;; Have these at top in case they need editing.   \;;
+(setq chop '"http://xstream1.somafm.com:8062")    ;; Cliqhop
+(setq dubs '"http://uwstream2.somafm.com:8406")   ;; Dubstep Beyond
+(setq 7iso '"http://uwstream2.somafm.com:7770")   ;; Seven Inch Soul
+(setq doom '"http://xstream1.somafm.com:8300")    ;; Doomed
+(setq suni '"http://uwstream2.somafm.com:8600")   ;; Sonic Universe
+(setq agnt '"http://xstream1.somafm.com:8002")    ;; Secret Agent
+(setq ipop '"http://uwstream3.somafm.com:8090")   ;; Indy Pop Rocks
+(setq ffor '"http://xstream1.somafm.com:7400")    ;; Folk Forward
+(setq bagr '"http://uwstream3.somafm.com:9090")   ;; BAGeL Radio
+(setq digi '"http://xstream1.somafm.com:8900")    ;; Digitalis
+(setq grsl '"http://uwstream1.somafm.com:80")     ;; Groove Salad
+(setq lush '"http://uwstream2.somafm.com:8800")   ;; Lush
+(setq spss '"http://uwstream3.somafm.com:8000") ;; Space Station Soma
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -122,3 +123,12 @@
 		     "Lush"
 		     "mpg123"
 		     "%s" lush))
+
+(defun eplayer-space_station (station)
+  "start a Soma FM Space Station Soma (ambient) radio stream in new buffer"
+  (message "Soma FM's Space Station Soma, ambient")
+  (interactive "p")
+      (start-process "Space Station"
+		     "Space Station"
+		     "mpg123"
+		     "%s" spss))
