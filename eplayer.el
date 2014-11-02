@@ -10,6 +10,7 @@
 (setq ipop '"http://uwstream3.somafm.com:8090") ;; Indy Pop Rocks
 (setq ffor '"http://xstream1.somafm.com:7400")  ;; Folk Forward
 (setq bagr '"http://uwstream3.somafm.com:9090") ;; BAGeL Radio
+(setq digi '"http://xstream1.somafm.com:8900")  ;; Digitalis
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -92,3 +93,15 @@
 		     "BAGeL_radio"
 		     "mpg123"
 		     "%s" bagr))
+
+(defun eplayer-digitalis (station)
+  "start a Soma FM Digitalis (screengaze) radio stream in new buffer"
+  (message "Soma FM's Digitalis, Digitalized Rock")
+  (interactive "p")
+      (start-process "Digitalis"
+		     "Digitalis"
+		     "mpg123"
+		     "%s" digi))
+
+
+
