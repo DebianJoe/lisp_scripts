@@ -12,6 +12,7 @@
 (setq bagr '"http://uwstream3.somafm.com:9090") ;; BAGeL Radio
 (setq digi '"http://xstream1.somafm.com:8900")  ;; Digitalis
 (setq grsl '"http://uwstream1.somafm.com:80")   ;; Groove Salad
+(setq lush '"http://uwstream2.somafm.com:8800") ;; Lush
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -112,3 +113,12 @@
 		     "Groove Salad"
 		     "mpg123"
 		     "%s" grsl))
+
+(defun eplayer-lush (station)
+  "start a Soma FM Lush (mellow/chilled) radio stream in new buffer"
+  (message "Soma FM's Lush, mellow and chill")
+  (interactive "p")
+      (start-process "Lush"
+		     "Lush"
+		     "mpg123"
+		     "%s" lush))
