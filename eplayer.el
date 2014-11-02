@@ -1,6 +1,6 @@
 ;; Creates an new interactive buffer for music from SomaFM;;
 
-;; Have these at top in case they need editing.   \;;
+;; Have these at top in case they need editing.   ;;
 (setq chop '"http://xstream1.somafm.com:8062")    ;; Cliqhop
 (setq dubs '"http://uwstream2.somafm.com:8406")   ;; Dubstep Beyond
 (setq 7iso '"http://uwstream2.somafm.com:7770")   ;; Seven Inch Soul
@@ -13,7 +13,8 @@
 (setq digi '"http://xstream1.somafm.com:8900")    ;; Digitalis
 (setq grsl '"http://uwstream1.somafm.com:80")     ;; Groove Salad
 (setq lush '"http://uwstream2.somafm.com:8800")   ;; Lush
-(setq spss '"http://uwstream3.somafm.com:8000") ;; Space Station Soma
+(setq spss '"http://uwstream3.somafm.com:8000")   ;; Space Station Soma
+(setq trip '"http://xstream1.somafm.com:2504")    ;; The Trip
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -132,3 +133,12 @@
 		     "Space Station"
 		     "mpg123"
 		     "%s" spss))
+
+(defun eplayer-the_trip (station)
+  "start a Soma FM The Trip (trance) radio stream in new buffer"
+  (message "Soma FM's The Trip, Progressive Trance")
+  (interactive "p")
+      (start-process "the Trip"
+		     "the Trip"
+		     "mpg123"
+		     "%s" trip))
