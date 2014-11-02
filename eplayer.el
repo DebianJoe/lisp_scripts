@@ -11,6 +11,7 @@
 (setq ffor '"http://xstream1.somafm.com:7400")  ;; Folk Forward
 (setq bagr '"http://uwstream3.somafm.com:9090") ;; BAGeL Radio
 (setq digi '"http://xstream1.somafm.com:8900")  ;; Digitalis
+(setq grsl '"http://uwstream1.somafm.com:80")   ;; Groove Salad
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -103,5 +104,11 @@
 		     "mpg123"
 		     "%s" digi))
 
-
-
+(defun eplayer-groove_salad (station)
+  "start a Soma FM Groove Salad (downtempo beats) radio stream in new buffer"
+  (message "Soma FM's Groove Salad")
+  (interactive "p")
+      (start-process "Groove Salad"
+		     "Groove Salad"
+		     "mpg123"
+		     "%s" grsl))
