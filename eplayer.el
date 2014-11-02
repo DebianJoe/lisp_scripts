@@ -15,6 +15,7 @@
 (setq lush '"http://uwstream2.somafm.com:8800")   ;; Lush
 (setq spss '"http://uwstream3.somafm.com:8000")   ;; Space Station Soma
 (setq trip '"http://xstream1.somafm.com:2504")    ;; The Trip
+(setq earw '"http://uwstream3.somafm.com:5100")   ;; Earwaves
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -142,3 +143,12 @@
 		     "the Trip"
 		     "mpg123"
 		     "%s" trip))
+
+(defun eplayer-earwaves (station)
+  "start a Soma FM Earwaves (experimental elec) radio stream in new buffer"
+  (message "Soma FM's Earwaves, Experimental Electronica")
+  (interactive "p")
+      (start-process "Earwaves"
+		     "Earwaves"
+		     "mpg123"
+		     "%s" earw))
