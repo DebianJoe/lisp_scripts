@@ -8,6 +8,7 @@
 (setq suni '"http://uwstream2.somafm.com:8600") ;; Sonic Universe
 (setq agnt '"http://xstream1.somafm.com:8002")  ;; Secret Agent
 (setq ipop '"http://uwstream3.somafm.com:8090") ;; Indy Pop Rocks
+(setq ffor '"http://xstream1.somafm.com:7400")  ;; Folk Forward
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -72,3 +73,12 @@
 		     "Indy_Pop"
 		     "mpg123"
 		     "%s" ipop))
+
+(defun eplayer-folk_forward (station)
+  "start a Soma FM Folk Forward (Indy Alt Folk) radio stream in new buffer"
+  (message "Soma FM's Folk Forward, Indy Alt Folk")
+  (interactive "p")
+      (start-process "Folk_Forward"
+		     "Folk_Forward"
+		     "mpg123"
+		     "%s" ffor))
