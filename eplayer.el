@@ -5,6 +5,7 @@
 (setq dubs '"http://uwstream2.somafm.com:8406") ;; Dubstep Beyond
 (setq 7iso '"http://uwstream2.somafm.com:7770") ;; Seven Inch Soul
 (setq doom '"http://xstream1.somafm.com:8300")  ;; Doomed
+(setq suni '"http://uwstream2.somafm.com:8600") ;; Sonic Universe
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -42,3 +43,12 @@
 		     "Doomed"
 		     "mpg123"
 		     "%s" doom))
+
+(defun eplayer-sonic (station)
+  "start a Sonic Universe radio stream in new buffer"
+  (message "Soma FM's Sonic Universe")
+  (interactive "p")
+      (start-process "Sonic_Universe"
+		     "Sonic_Universe"
+		     "mpg123"
+		     "%s" suni))
