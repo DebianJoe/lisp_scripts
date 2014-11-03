@@ -21,8 +21,18 @@
 (setq mico '"http://uwstream3.somafm.com:2020")   ;; Mission Control
 (setq bliq '"http://uwstream2.somafm.com:9004")   ;; Boot Liquor
 (setq covr '"http://uwstream3.somafm.com:8700")   ;; Covers
+(setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
 
 ;; set each station as a function to allow auto-complete fills ;;
+(defun eplayer-illinois_street (station)
+  "start a SomaFM Illinois Street lounge (lounge music) direct stream in new buffer"
+  (message "Soma FM's Illinois Street Lounge")
+  (interactive "p")
+      (start-process "IL Street Lounge"
+		     "IL Street Lounge"
+		     "mpg123"
+		     "%s" ilsl))
+
 (defun eplayer-underground_80s (station)
   "start a SomaFM Underground Eighties (new wave) direct stream in new buffer"
   (message "Soma FM's Underground 80s, Wavy")
