@@ -25,8 +25,28 @@
 (setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
 (setq popt '"http://xstream1.somafm.com:2200")    ;; PopTron
 (setq subu '"http://xstream1.somafm.com:8850")    ;; Suburbs of Goa
+(setq bebl '"http://xstream1.somafm.com:8388")    ;; Beat Blender
+(setq sfpd '"http://uwstream2.somafm.com:2040")   ;; SF 10-33
 
 ;; set each station as a function to allow auto-complete fills ;;
+(defun eplayer-sf_10-33 (station)
+  "start a SomaFM SF 10-33 (ambient) direct stream in new buffer"
+  (message "Soma FM's SF 10-33, ambient safety traffic")
+  (interactive "p")
+      (start-process "SF 10-33"
+		     "SF 10-33"
+		     "mpg123"
+		     "%s" sfpd))
+
+
+(defun eplayer-beat_blender (station)
+  "start a SomaFM Beat Blender (chill) direct stream in new buffer"
+  (message "Soma FM's Beat Blender, downtempo and chilled")
+  (interactive "p")
+      (start-process "Beat Blender"
+		     "Beat Blender"
+		     "mpg123"
+		     "%s" bebl))
 
 (defun eplayer-suburbs_goa (station)
   "start a SomaFM Suburbs of Goa (world beat) direct stream in new buffer"
