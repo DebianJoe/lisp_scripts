@@ -1,4 +1,7 @@
-;; Creates an new interactive buffer for music from SomaFM;;
+;; Creates an new interactive buffer for music from SomaFM      ;;
+;; if you find this useful, and want to help...donate to somafm ;;
+;; because they're the ones who keep the servers running        ;;
+;; @ www.somafm.com                                             ;;
 
 ;; Have these at top in case they need editing.   ;;
 
