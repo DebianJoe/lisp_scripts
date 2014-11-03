@@ -18,6 +18,7 @@
 (setq earw '"http://uwstream3.somafm.com:5100")   ;; Earwaves
 (setq mico '"http://uwstream3.somafm.com:2020")   ;; Mission Control
 (setq bliq '"http://uwstream2.somafm.com:9004")   ;; Boot Liquor
+(setq covr '"http://uwstream3.somafm.com:8700")   ;; Covers
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -172,4 +173,13 @@
 		     "Boot Liquor"
 		     "mpg123"
 		     "%s" bliq))
+
+(defun eplayer-covers (station)
+  "start a Soma FM Covers (all remakes) radio stream in new buffer"
+  (message "Soma FM's Covers, Creative Remakes")
+  (interactive "p")
+      (start-process "Covers"
+		     "Covers"
+		     "mpg123"
+		     "%s" covr))
 
