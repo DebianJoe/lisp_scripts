@@ -16,6 +16,8 @@
 (setq spss '"http://uwstream3.somafm.com:8000")   ;; Space Station Soma
 (setq trip '"http://xstream1.somafm.com:2504")    ;; The Trip
 (setq earw '"http://uwstream3.somafm.com:5100")   ;; Earwaves
+(setq mico '"http://uwstream3.somafm.com:2020")   ;; Mission Control
+(setq bliq '"http://uwstream2.somafm.com:9004")   ;; Boot Liquor
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-cliqhop (station)
@@ -152,3 +154,22 @@
 		     "Earwaves"
 		     "mpg123"
 		     "%s" earw))
+
+(defun eplayer-mission_control (station)
+  "start a Soma FM Mission Control (Space Music) radio stream in new buffer"
+  (message "Soma FM's Mission Control, Celebrating Space Explorers")
+  (interactive "p")
+      (start-process "Mission Control"
+		     "Mission Control"
+		     "mpg123"
+		     "%s" mico))
+
+(defun eplayer-boot_liquor (station)
+  "start a Soma FM Boot Liquor (Country Music) radio stream in new buffer"
+  (message "Soma FM's Boot liquor, Music for Cowpokes")
+  (interactive "p")
+      (start-process "Boot Liquor"
+		     "Boot Liquor"
+		     "mpg123"
+		     "%s" bliq))
+
