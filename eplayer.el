@@ -22,8 +22,18 @@
 (setq bliq '"http://uwstream2.somafm.com:9004")   ;; Boot Liquor
 (setq covr '"http://uwstream3.somafm.com:8700")   ;; Covers
 (setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
-
+(setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
 ;; set each station as a function to allow auto-complete fills ;;
+
+(defun eplayer-deepspace1 (station)
+  "start a SomaFM Deep Space One (deep ambient) direct stream in new buffer"
+  (message "Soma FM's Deep Space One, space out")
+  (interactive "p")
+      (start-process "Deep_Space_1"
+		     "Deep_Space_1"
+		     "mpg123"
+		     "%s" dsp1))
+
 (defun eplayer-illinois_street (station)
   "start a SomaFM Illinois Street lounge (lounge music) direct stream in new buffer"
   (message "Soma FM's Illinois Street Lounge")
