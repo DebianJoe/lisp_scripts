@@ -1,6 +1,8 @@
 ;; Creates an new interactive buffer for music from SomaFM;;
 
 ;; Have these at top in case they need editing.   ;;
+
+(setq u80s '"http://xstream1.somafm.com:8880")    ;; Underground Eighties
 (setq chop '"http://xstream1.somafm.com:8062")    ;; Cliqhop
 (setq dubs '"http://uwstream2.somafm.com:8406")   ;; Dubstep Beyond
 (setq 7iso '"http://uwstream2.somafm.com:7770")   ;; Seven Inch Soul
@@ -21,6 +23,15 @@
 (setq covr '"http://uwstream3.somafm.com:8700")   ;; Covers
 
 ;; set each station as a function to allow auto-complete fills ;;
+(defun eplayer-underground_80s (station)
+  "start a SomaFM Underground Eighties (new wave) direct stream in new buffer"
+  (message "Soma FM's Underground 80s, Wavy")
+  (interactive "p")
+      (start-process "Underground 80s"
+		     "Underground 80s"
+		     "mpg123"
+		     "%s" u80s))
+
 (defun eplayer-cliqhop (station)
   "start a SomaFM Cliqhop (idm) direct stream in new buffer"
   (message "Soma FM's Cliqhop")
@@ -57,7 +68,7 @@
 		     "mpg123"
 		     "%s" doom))
 
-(defun eplayer-sonic (station)
+(defun eplayer-sonic_universe (station)
   "start a Soma FM Sonic Universe radio stream in new buffer"
   (message "Soma FM's Sonic Universe, Transcending Jazz")
   (interactive "p")
