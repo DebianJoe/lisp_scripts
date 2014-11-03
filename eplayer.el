@@ -23,7 +23,19 @@
 (setq covr '"http://uwstream3.somafm.com:8700")   ;; Covers
 (setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
 (setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
+(setq popt '"http://xstream1.somafm.com:2200")    ;; PopTron
+
 ;; set each station as a function to allow auto-complete fills ;;
+
+
+(defun eplayer-poptron (station)
+  "start a SomaFM PopTron (electropop) direct stream in new buffer"
+  (message "Soma FM's PopTron, electropop")
+  (interactive "p")
+      (start-process "PopTron"
+		     "PopTron"
+		     "mpg123"
+		     "%s" popt))
 
 (defun eplayer-deepspace1 (station)
   "start a SomaFM Deep Space One (deep ambient) direct stream in new buffer"
