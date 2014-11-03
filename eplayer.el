@@ -24,9 +24,18 @@
 (setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
 (setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
 (setq popt '"http://xstream1.somafm.com:2200")    ;; PopTron
+(setq subu '"http://xstream1.somafm.com:8850")    ;; Suburbs of Goa
 
 ;; set each station as a function to allow auto-complete fills ;;
 
+(defun eplayer-suburbs_goa (station)
+  "start a SomaFM Suburbs of Goa (world beat) direct stream in new buffer"
+  (message "Soma FM's Suburbs of Goa, Worldbeat inspired")
+  (interactive "p")
+      (start-process "Suburbs of Goa"
+		     "Suburbs of Goa"
+		     "mpg123"
+		     "%s" subu))
 
 (defun eplayer-poptron (station)
   "start a SomaFM PopTron (electropop) direct stream in new buffer"
