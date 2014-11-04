@@ -17,7 +17,7 @@
 (setq bagr '"http://somafm.com/bagel.pls")        ;; BAGeL Radio
 (setq digi '"http://somafm.com/digitalis.pls")    ;; Digitalis
 (setq grsl '"http://somafm.com/groovesalad.pls")  ;; Groove Salad
-(setq lush '"http://uwstream2.somafm.com:8800")   ;; Lush
+(setq lush '"http://somafm.com/lush.pls")         ;; Lush
 (setq spss '"http://uwstream3.somafm.com:8000")   ;; Space Station Soma
 (setq trip '"http://xstream1.somafm.com:2504")    ;; The Trip
 (setq earw '"http://uwstream3.somafm.com:5100")   ;; Earwaves
@@ -202,7 +202,7 @@
       (start-process "Lush"
 		     "Lush"
 		     "mpg123"
-		     "%s" lush))
+		     (concat "-@" lush)))
 
 (defun eplayer-space_station (station)
   "start a Soma FM Space Station Soma (ambient) radio stream in new buffer"
