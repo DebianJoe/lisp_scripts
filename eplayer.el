@@ -24,7 +24,7 @@
 (setq mico '"http://somafm.com/missioncontrol.pls");; Mission Control
 (setq bliq '"http://somafm.com/bootliquor.pls")    ;; Boot Liquor
 (setq covr '"http://somafm.com/covers.pls")        ;; Covers
-(setq ilsl '"http://xstream1.somafm.com:8500")     ;; Illinois Street Lounge
+(setq ilsl '"http://somafm.com/illstreet.pls")     ;; Illinois Street Lounge
 (setq dsp1 '"http://xstream1.somafm.com:2800")     ;; DeepSpace One
 (setq popt '"http://somafm.com/indiepop.pls")      ;; PopTron
 (setq subu '"http://xstream1.somafm.com:8850")     ;; Suburbs of Goa
@@ -85,7 +85,7 @@
       (start-process "IL Street Lounge"
 		     "IL Street Lounge"
 		     "mpg123"
-		     "%s" ilsl))
+		     (concat "-@" ilsl)))
 
 (defun eplayer-underground_80s (station)
   "start a SomaFM Underground Eighties (new wave) direct stream in new buffer"
