@@ -1,4 +1,4 @@
-;; Creates an new interactive buffer for music from SomaFM      ;;
+\;; Creates an new interactive buffer for music from SomaFM      ;;
 ;; if you find this useful, and want to help...donate to somafm ;;
 ;; because they're the ones who keep the servers running        ;;
 ;; @ www.somafm.com                                             ;;
@@ -28,7 +28,7 @@
 (setq dsp1 '"http://somafm.com/deepspaceone.pls")  ;; DeepSpace One
 (setq popt '"http://somafm.com/poptron.pls")       ;; PopTron
 (setq subu '"http://somafm.com/suburbsofgoa.pls")  ;; Suburbs of Goa
-(setq bebl '"http://xstream1.somafm.com:8388")     ;; Beat Blender
+(setq bebl '"http://somafm.com/beatblender.pls")   ;; Beat Blender
 (setq sfpd '"http://uwstream2.somafm.com:2040")    ;; SF 10-33
 
 ;; set each station as a function to allow auto-complete fills ;;
@@ -49,7 +49,7 @@
       (start-process "Beat Blender"
 		     "Beat Blender"
 		     "mpg123"
-		     "%s" bebl))
+		     (concat "-@" bebl)))
 
 (defun eplayer-suburbs_goa (station)
   "start a SomaFM Suburbs of Goa (world beat) direct stream in new buffer"
