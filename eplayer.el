@@ -14,9 +14,9 @@
 (setq agnt '"http://somafm.com/secretagent.pls")  ;; Secret Agent
 (setq ipop '"http://uwstream3.somafm.com:8090")   ;; Indy Pop Rocks
 (setq ffor '"http://somafm.com/folkfwd.pls")      ;; Folk Forward
-(setq bagr '"http://uwstream3.somafm.com:9090")   ;; BAGeL Radio
-(setq digi '"http://xstream1.somafm.com:8900")    ;; Digitalis
-(setq grsl '"http://uwstream1.somafm.com:80")     ;; Groove Salad
+(setq bagr '"http://somafm.com/bagel.pls")        ;; BAGeL Radio
+(setq digi '"http://somafm.com/digitalis.pls")    ;; Digitalis
+(setq grsl '"http://somafm.com/groovesalad.pls")  ;; Groove Salad
 (setq lush '"http://uwstream2.somafm.com:8800")   ;; Lush
 (setq spss '"http://uwstream3.somafm.com:8000")   ;; Space Station Soma
 (setq trip '"http://xstream1.somafm.com:2504")    ;; The Trip
@@ -175,7 +175,7 @@
       (start-process "BAGeL_radio"
 		     "BAGeL_radio"
 		     "mpg123"
-		     "%s" bagr))
+		     (concat "-@" bagr)))
 
 (defun eplayer-digitalis (station)
   "start a Soma FM Digitalis (screengaze) radio stream in new buffer"
@@ -184,7 +184,7 @@
       (start-process "Digitalis"
 		     "Digitalis"
 		     "mpg123"
-		     "%s" digi))
+		     (concat "-@" digi)))
 
 (defun eplayer-groove_salad (station)
   "start a Soma FM Groove Salad (downtempo beats) radio stream in new buffer"
@@ -193,7 +193,7 @@
       (start-process "Groove Salad"
 		     "Groove Salad"
 		     "mpg123"
-		     "%s" grsl))
+		     (concat "-@" grsl)))
 
 (defun eplayer-lush (station)
   "start a Soma FM Lush (mellow/chilled) radio stream in new buffer"
