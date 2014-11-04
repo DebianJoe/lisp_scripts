@@ -6,7 +6,7 @@
 ;; Have these at top in case they need editing.   ;;
 
 (setq u80s '"http://xstream1.somafm.com:8880")    ;; Underground Eighties
-(setq chop '"http://xstream1.somafm.com:8062")    ;; Cliqhop
+(setq chop '"http://somafm.com/cliqhop.pls")      ;; Cliqhop
 (setq dubs '"http://uwstream2.somafm.com:8406")   ;; Dubstep Beyond
 (setq 7iso '"http://uwstream2.somafm.com:7770")   ;; Seven Inch Soul
 (setq doom '"http://xstream1.somafm.com:8300")    ;; Doomed
@@ -103,7 +103,7 @@
       (start-process "cliqhop"
 		     "cliqhop"
 		     "mpg123"
-		     "%s" chop))
+		     (concat "-@" chop)))
 
 (defun eplayer-dubstep (station)
   "start a Soma FM Dubstep Beyond (bass music) radio stream in new buffer"
