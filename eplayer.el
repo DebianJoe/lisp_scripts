@@ -11,7 +11,7 @@
 (setq 7iso '"http://uwstream2.somafm.com:7770")   ;; Seven Inch Soul
 (setq doom '"http://xstream1.somafm.com:8300")    ;; Doomed
 (setq suni '"http://somafm.com/sonicuniverse.pls");; Sonic Universe
-(setq agnt '"http://xstream1.somafm.com:8002")    ;; Secret Agent
+(setq agnt '"http://somafm.com/secretagent.pls")  ;; Secret Agent
 (setq ipop '"http://uwstream3.somafm.com:8090")   ;; Indy Pop Rocks
 (setq ffor '"http://xstream1.somafm.com:7400")    ;; Folk Forward
 (setq bagr '"http://uwstream3.somafm.com:9090")   ;; BAGeL Radio
@@ -26,7 +26,7 @@
 (setq covr '"http://somafm.com/covers.pls")       ;; Covers
 (setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
 (setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
-(setq popt '"http://xstream1.somafm.com:2200")    ;; PopTron
+(setq popt '"http://somafm.com/indiepop.pls")     ;; PopTron
 (setq subu '"http://xstream1.somafm.com:8850")    ;; Suburbs of Goa
 (setq bebl '"http://xstream1.somafm.com:8388")    ;; Beat Blender
 (setq sfpd '"http://uwstream2.somafm.com:2040")   ;; SF 10-33
@@ -67,7 +67,7 @@
       (start-process "PopTron"
 		     "PopTron"
 		     "mpg123"
-		     "%s" popt))
+		     (concat "-@" popt)))
 
 (defun eplayer-deepspace1 (station)
   "start a SomaFM Deep Space One (deep ambient) direct stream in new buffer"
@@ -148,7 +148,7 @@
       (start-process "Secret_Agent"
 		     "Secret_Agent"
 		     "mpg123"
-		     "%s" agnt))
+		     (concat "-@" agnt)))
 
 (defun eplayer-indy_pop (station)
   "start an Indy Pop Rocks (independent pop/rock) radio stream in new buffer"
