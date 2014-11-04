@@ -19,7 +19,7 @@
 (setq grsl '"http://somafm.com/groovesalad.pls")  ;; Groove Salad
 (setq lush '"http://somafm.com/lush.pls")         ;; Lush
 (setq spss '"http://somafm.com/spacestation.pls") ;; Space Station Soma
-(setq trip '"http://xstream1.somafm.com:2504")    ;; The Trip
+(setq trip '"http://somafm.com/thetrip.pls")      ;; The Trip
 (setq earw '"http://uwstream3.somafm.com:5100")   ;; Earwaves
 (setq mico '"http://uwstream3.somafm.com:2020")   ;; Mission Control
 (setq bliq '"http://somafm.com/bootliquor.pls")   ;; Boot Liquor
@@ -220,7 +220,7 @@
       (start-process "the Trip"
 		     "the Trip"
 		     "mpg123"
-		     "%s" trip))
+		     (concat "-@" trip)))
 
 (defun eplayer-earwaves (station)
   "start a Soma FM Earwaves (experimental elec) radio stream in new buffer"
