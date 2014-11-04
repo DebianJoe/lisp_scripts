@@ -8,7 +8,7 @@
 (setq u80s '"http://xstream1.somafm.com:8880")    ;; Underground Eighties
 (setq chop '"http://somafm.com/cliqhop.pls")      ;; Cliqhop
 (setq dubs '"http://uwstream2.somafm.com:8406")   ;; Dubstep Beyond
-(setq 7iso '"http://uwstream2.somafm.com:7770")   ;; Seven Inch Soul
+(setq 7iso '"http://somafm.com/7soul.pls")        ;; Seven Inch Soul
 (setq doom '"http://xstream1.somafm.com:8300")    ;; Doomed
 (setq suni '"http://somafm.com/sonicuniverse.pls");; Sonic Universe
 (setq agnt '"http://somafm.com/secretagent.pls")  ;; Secret Agent
@@ -121,7 +121,7 @@
       (start-process "7inch_soul"
 		     "7inch_soul"
 		     "mpg123"
-		     "%s" 7iso))
+		     (concat "-@" 7iso)))
 
 (defun eplayer-doomed (station)
   "start a Soma FM Doomed (industrial and darker ambient) radio stream in new buffer"
