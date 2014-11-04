@@ -7,7 +7,7 @@
 
 (setq u80s '"http://xstream1.somafm.com:8880")    ;; Underground Eighties
 (setq chop '"http://somafm.com/cliqhop.pls")      ;; Cliqhop
-(setq dubs '"http://uwstream2.somafm.com:8406")   ;; Dubstep Beyond
+(setq dubs '"http://somafm.com/dubstep.pls")      ;; Dubstep Beyond
 (setq 7iso '"http://somafm.com/7soul.pls")        ;; Seven Inch Soul
 (setq doom '"http://xstream1.somafm.com:8300")    ;; Doomed
 (setq suni '"http://somafm.com/sonicuniverse.pls");; Sonic Universe
@@ -112,7 +112,7 @@
       (start-process "dubstep"
 		     "dubstep_beyond"
 		     "mpg123"
-		     "%s" dubs))
+		     (concat "-@" dubs)))
 
 (defun eplayer-7inchsoul (station)
   "start a Soma FM Seven Inch Soul (off of 45's) radio stream in new buffer"
