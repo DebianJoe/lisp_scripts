@@ -5,31 +5,31 @@
 
 ;; Have these at top in case they need editing.   ;;
 
-(setq u80s '"http://xstream1.somafm.com:8880")    ;; Underground Eighties
-(setq chop '"http://somafm.com/cliqhop.pls")      ;; Cliqhop
-(setq dubs '"http://somafm.com/dubstep.pls")      ;; Dubstep Beyond
-(setq 7iso '"http://somafm.com/7soul.pls")        ;; Seven Inch Soul
-(setq doom '"http://xstream1.somafm.com:8300")    ;; Doomed
-(setq suni '"http://somafm.com/sonicuniverse.pls");; Sonic Universe
-(setq agnt '"http://somafm.com/secretagent.pls")  ;; Secret Agent
-(setq ipop '"http://uwstream3.somafm.com:8090")   ;; Indy Pop Rocks
-(setq ffor '"http://somafm.com/folkfwd.pls")      ;; Folk Forward
-(setq bagr '"http://somafm.com/bagel.pls")        ;; BAGeL Radio
-(setq digi '"http://somafm.com/digitalis.pls")    ;; Digitalis
-(setq grsl '"http://somafm.com/groovesalad.pls")  ;; Groove Salad
-(setq lush '"http://somafm.com/lush.pls")         ;; Lush
-(setq spss '"http://somafm.com/spacestation.pls") ;; Space Station Soma
-(setq trip '"http://somafm.com/thetrip.pls")      ;; The Trip
-(setq earw '"http://somafm.com/earwaves.pls")     ;; Earwaves
-(setq mico '"http://uwstream3.somafm.com:2020")   ;; Mission Control
-(setq bliq '"http://somafm.com/bootliquor.pls")   ;; Boot Liquor
-(setq covr '"http://somafm.com/covers.pls")       ;; Covers
-(setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
-(setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
-(setq popt '"http://somafm.com/indiepop.pls")     ;; PopTron
-(setq subu '"http://xstream1.somafm.com:8850")    ;; Suburbs of Goa
-(setq bebl '"http://xstream1.somafm.com:8388")    ;; Beat Blender
-(setq sfpd '"http://uwstream2.somafm.com:2040")   ;; SF 10-33
+(setq u80s '"http://xstream1.somafm.com:8880")     ;; Underground Eighties
+(setq chop '"http://somafm.com/cliqhop.pls")       ;; Cliqhop
+(setq dubs '"http://somafm.com/dubstep.pls")       ;; Dubstep Beyond
+(setq 7iso '"http://somafm.com/7soul.pls")         ;; Seven Inch Soul
+(setq doom '"http://xstream1.somafm.com:8300")     ;; Doomed
+(setq suni '"http://somafm.com/sonicuniverse.pls") ;; Sonic Universe
+(setq agnt '"http://somafm.com/secretagent.pls")   ;; Secret Agent
+(setq ipop '"http://uwstream3.somafm.com:8090")    ;; Indy Pop Rocks
+(setq ffor '"http://somafm.com/folkfwd.pls")       ;; Folk Forward
+(setq bagr '"http://somafm.com/bagel.pls")         ;; BAGeL Radio
+(setq digi '"http://somafm.com/digitalis.pls")     ;; Digitalis
+(setq grsl '"http://somafm.com/groovesalad.pls")   ;; Groove Salad
+(setq lush '"http://somafm.com/lush.pls")          ;; Lush
+(setq spss '"http://somafm.com/spacestation.pls")  ;; Space Station Soma
+(setq trip '"http://somafm.com/thetrip.pls")       ;; The Trip
+(setq earw '"http://somafm.com/earwaves.pls")      ;; Earwaves
+(setq mico '"http://somafm.com/missioncontrol.pls");; Mission Control
+(setq bliq '"http://somafm.com/bootliquor.pls")    ;; Boot Liquor
+(setq covr '"http://somafm.com/covers.pls")        ;; Covers
+(setq ilsl '"http://xstream1.somafm.com:8500")     ;; Illinois Street Lounge
+(setq dsp1 '"http://xstream1.somafm.com:2800")     ;; DeepSpace One
+(setq popt '"http://somafm.com/indiepop.pls")      ;; PopTron
+(setq subu '"http://xstream1.somafm.com:8850")     ;; Suburbs of Goa
+(setq bebl '"http://xstream1.somafm.com:8388")     ;; Beat Blender
+(setq sfpd '"http://uwstream2.somafm.com:2040")    ;; SF 10-33
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-sf_10-33 (station)
@@ -238,7 +238,7 @@
       (start-process "Mission Control"
 		     "Mission Control"
 		     "mpg123"
-		     "%s" mico))
+		     (concat "-@" mico)))
 
 (defun eplayer-boot_liquor (station)
   "start a Soma FM Boot Liquor (Country Music) radio stream in new buffer"
