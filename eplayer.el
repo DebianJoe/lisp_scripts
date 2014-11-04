@@ -23,7 +23,7 @@
 (setq earw '"http://uwstream3.somafm.com:5100")   ;; Earwaves
 (setq mico '"http://uwstream3.somafm.com:2020")   ;; Mission Control
 (setq bliq '"http://uwstream2.somafm.com:9004")   ;; Boot Liquor
-(setq covr '"http://uwstream3.somafm.com:8700")   ;; Covers
+(setq covr '"http://somafm.com/covers.pls")       ;; Covers
 (setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
 (setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
 (setq popt '"http://xstream1.somafm.com:2200")    ;; PopTron
@@ -256,5 +256,5 @@
       (start-process "Covers"
 		     "Covers"
 		     "mpg123"
-		     "%s" covr))
+		     (concat "-@" covr)))
 
