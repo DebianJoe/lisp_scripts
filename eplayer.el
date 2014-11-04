@@ -12,7 +12,7 @@
 (setq doom '"http://xstream1.somafm.com:8300")     ;; Doomed
 (setq suni '"http://somafm.com/sonicuniverse.pls") ;; Sonic Universe
 (setq agnt '"http://somafm.com/secretagent.pls")   ;; Secret Agent
-(setq ipop '"http://uwstream3.somafm.com:8090")    ;; Indy Pop Rocks
+(setq ipop '"http://somafm.com/indiepop.pls")      ;; Indy Pop Rocks
 (setq ffor '"http://somafm.com/folkfwd.pls")       ;; Folk Forward
 (setq bagr '"http://somafm.com/bagel.pls")         ;; BAGeL Radio
 (setq digi '"http://somafm.com/digitalis.pls")     ;; Digitalis
@@ -26,7 +26,7 @@
 (setq covr '"http://somafm.com/covers.pls")        ;; Covers
 (setq ilsl '"http://somafm.com/illstreet.pls")     ;; Illinois Street Lounge
 (setq dsp1 '"http://somafm.com/deepspaceone.pls")  ;; DeepSpace One
-(setq popt '"http://somafm.com/indiepop.pls")      ;; PopTron
+(setq popt '"http://somafm.com/poptron.pls")       ;; PopTron
 (setq subu '"http://somafm.com/suburbsofgoa.pls")  ;; Suburbs of Goa
 (setq bebl '"http://xstream1.somafm.com:8388")     ;; Beat Blender
 (setq sfpd '"http://uwstream2.somafm.com:2040")    ;; SF 10-33
@@ -157,7 +157,7 @@
       (start-process "Indy_Pop"
 		     "Indy_Pop"
 		     "mpg123"
-		     "%s" ipop))
+		     (concat "-@" ipop)))
 
 (defun eplayer-folk_forward (station)
   "start a Soma FM Folk Forward (Indy Alt Folk) radio stream in new buffer"
