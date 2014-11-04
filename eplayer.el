@@ -13,7 +13,7 @@
 (setq suni '"http://somafm.com/sonicuniverse.pls");; Sonic Universe
 (setq agnt '"http://somafm.com/secretagent.pls")  ;; Secret Agent
 (setq ipop '"http://uwstream3.somafm.com:8090")   ;; Indy Pop Rocks
-(setq ffor '"http://xstream1.somafm.com:7400")    ;; Folk Forward
+(setq ffor '"http://somafm.com/folkfwd.pls")      ;; Folk Forward
 (setq bagr '"http://uwstream3.somafm.com:9090")   ;; BAGeL Radio
 (setq digi '"http://xstream1.somafm.com:8900")    ;; Digitalis
 (setq grsl '"http://uwstream1.somafm.com:80")     ;; Groove Salad
@@ -166,7 +166,7 @@
       (start-process "Folk_Forward"
 		     "Folk_Forward"
 		     "mpg123"
-		     "%s" ffor))
+		     (concat "-@" ffor)))
 
 (defun eplayer-bagel_radio (station)
   "start a Soma FM BAGeL Radio (Alt Rock) radio stream in new buffer"
