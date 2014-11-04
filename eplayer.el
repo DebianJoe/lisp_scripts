@@ -25,7 +25,7 @@
 (setq bliq '"http://somafm.com/bootliquor.pls")    ;; Boot Liquor
 (setq covr '"http://somafm.com/covers.pls")        ;; Covers
 (setq ilsl '"http://somafm.com/illstreet.pls")     ;; Illinois Street Lounge
-(setq dsp1 '"http://xstream1.somafm.com:2800")     ;; DeepSpace One
+(setq dsp1 '"http://somafm.com/deepspaceone.pls")  ;; DeepSpace One
 (setq popt '"http://somafm.com/indiepop.pls")      ;; PopTron
 (setq subu '"http://xstream1.somafm.com:8850")     ;; Suburbs of Goa
 (setq bebl '"http://xstream1.somafm.com:8388")     ;; Beat Blender
@@ -76,7 +76,7 @@
       (start-process "Deep_Space_1"
 		     "Deep_Space_1"
 		     "mpg123"
-		     "%s" dsp1))
+		     (concat "-@" dsp1)))
 
 (defun eplayer-illinois_street (station)
   "start a SomaFM Illinois Street lounge (lounge music) direct stream in new buffer"
