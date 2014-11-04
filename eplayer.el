@@ -1,4 +1,4 @@
-\;; Creates an new interactive buffer for music from SomaFM      ;;
+;; Creates an new interactive buffer for music from SomaFM      ;;
 ;; if you find this useful, and want to help...donate to somafm ;;
 ;; because they're the ones who keep the servers running        ;;
 ;; @ www.somafm.com                                             ;;
@@ -9,7 +9,7 @@
 (setq chop '"http://somafm.com/cliqhop.pls")       ;; Cliqhop
 (setq dubs '"http://somafm.com/dubstep.pls")       ;; Dubstep Beyond
 (setq 7iso '"http://somafm.com/7soul.pls")         ;; Seven Inch Soul
-(setq doom '"http://xstream1.somafm.com:8300")     ;; Doomed
+(setq doom '"http://somafm.com/doomed.pls")        ;; Doomed
 (setq suni '"http://somafm.com/sonicuniverse.pls") ;; Sonic Universe
 (setq agnt '"http://somafm.com/secretagent.pls")   ;; Secret Agent
 (setq ipop '"http://somafm.com/indiepop.pls")      ;; Indy Pop Rocks
@@ -29,7 +29,7 @@
 (setq popt '"http://somafm.com/poptron.pls")       ;; PopTron
 (setq subu '"http://somafm.com/suburbsofgoa.pls")  ;; Suburbs of Goa
 (setq bebl '"http://somafm.com/beatblender.pls")   ;; Beat Blender
-(setq sfpd '"http://uwstream2.somafm.com:2040")    ;; SF 10-33
+(setq sfpd '"http://somafm.com/sf1033.pls")        ;; SF 10-33
 
 ;; set each station as a function to allow auto-complete fills ;;
 (defun eplayer-sf_10-33 (station)
@@ -39,7 +39,7 @@
       (start-process "SF 10-33"
 		     "SF 10-33"
 		     "mpg123"
-		     "%s" sfpd))
+		     (concat "-@" sfpd)))
 
 
 (defun eplayer-beat_blender (station)
@@ -130,7 +130,7 @@
       (start-process "Doomed"
 		     "Doomed"
 		     "mpg123"
-		     "%s" doom))
+		     (concat "-@" doom)))
 
 (defun eplayer-sonic_universe (station)
   "start a Soma FM Sonic Universe radio stream in new buffer"
@@ -257,4 +257,3 @@
 		     "Covers"
 		     "mpg123"
 		     (concat "-@" covr)))
-
