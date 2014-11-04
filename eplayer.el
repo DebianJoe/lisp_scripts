@@ -22,7 +22,7 @@
 (setq trip '"http://xstream1.somafm.com:2504")    ;; The Trip
 (setq earw '"http://uwstream3.somafm.com:5100")   ;; Earwaves
 (setq mico '"http://uwstream3.somafm.com:2020")   ;; Mission Control
-(setq bliq '"http://uwstream2.somafm.com:9004")   ;; Boot Liquor
+(setq bliq '"http://somafm.com/bootliquor.pls")   ;; Boot Liquor
 (setq covr '"http://somafm.com/covers.pls")       ;; Covers
 (setq ilsl '"http://xstream1.somafm.com:8500")    ;; Illinois Street Lounge
 (setq dsp1 '"http://xstream1.somafm.com:2800")    ;; DeepSpace One
@@ -247,7 +247,7 @@
       (start-process "Boot Liquor"
 		     "Boot Liquor"
 		     "mpg123"
-		     "%s" bliq))
+		     (concat "-@" bliq)))
 
 (defun eplayer-covers (station)
   "start a Soma FM Covers (all remakes) radio stream in new buffer"
