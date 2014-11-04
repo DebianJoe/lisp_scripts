@@ -27,7 +27,7 @@
 (setq ilsl '"http://somafm.com/illstreet.pls")     ;; Illinois Street Lounge
 (setq dsp1 '"http://somafm.com/deepspaceone.pls")  ;; DeepSpace One
 (setq popt '"http://somafm.com/indiepop.pls")      ;; PopTron
-(setq subu '"http://xstream1.somafm.com:8850")     ;; Suburbs of Goa
+(setq subu '"http://somafm.com/suburbsofgoa.pls")  ;; Suburbs of Goa
 (setq bebl '"http://xstream1.somafm.com:8388")     ;; Beat Blender
 (setq sfpd '"http://uwstream2.somafm.com:2040")    ;; SF 10-33
 
@@ -58,7 +58,7 @@
       (start-process "Suburbs of Goa"
 		     "Suburbs of Goa"
 		     "mpg123"
-		     "%s" subu))
+		     (concat "-@" subu)))
 
 (defun eplayer-poptron (station)
   "start a SomaFM PopTron (electropop) direct stream in new buffer"
