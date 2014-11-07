@@ -20,3 +20,15 @@
 (defun eshell/emacs (file)
   "find-file alias"
   (find-file file))
+
+;; GekkoP ido-mode eshell history ;;
+(add-hook 'eshell-mode-hook
+     (lambda ()
+       (local-set-key (kbd "C-c h")
+            (lambda ()
+              (interactive)
+              (insert
+               (ido-completing-read "Eshell history: "
+                     (delete-dups
+                      (ring-elements eshell-history-ring))))))
+       (local-set-key (kbd "C-c C-h") 'eshell-list-history)))
