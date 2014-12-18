@@ -1,13 +1,56 @@
-;; Not needed
-(define (word-to-check s)
-  (string-split s))
+;; (load-relative "/home/joe/lisp_scripts/schemes/anagram.scm")
 
-(define (rotate-left lst)
-  (if (null? lst)
-      '()
-      (append (cdr lst)
-	      (cons (car lst)
-		    '()))))
+;; Display our char, and a note that they're split.
+(define (charpull s i)
+  (parser (char->integer (string-ref s i))) ;; This step to our parser
+  (print "->")
+  (s_iter s (add1 i)))
 
-;; Using these and (reverse '(l s t))
-;; a length, and iterater, this should be doable.
+;; Tight iterative sequencer based on length
+(define (s_iter s i)
+  (if (>= i (string-length s))
+      (exit0)
+      (charpull s i)))
+
+;; I like using 'exit0' to call exits. :D
+(define (exit0) (print "done\n"))
+
+;; Placeholder parser
+(define (parser i)
+  (cond
+   ((or (= i 97) (= i 65)) (print "it's an a, add 2"))
+   ((or (= i 98) (= i 66)) (print "it's a b, add 3"))
+   ((or (= i 99) (= i 67)) (print "it's a c, add 5"))
+   ((or (= i 100) (= i 68)) (print "it's a d, add 7"))
+   ((or (= i 101) (= i 69)) (print "it's an e, add 11"))
+   ((or (= i 102) (= i 70)) (print "it's an f, add 13"))
+   ((or (= i 103) (= i 71)) (print "it's a g, add 17"))
+   ((or (= i 104) (= i 72)) (print "it's an h, add 19"))
+   ((or (= i 105) (= i 73)) (print "it's an i, add 23"))
+   ((or (= i 106) (= i 74)) (print "it's a j, add 29"))
+   ((or (= i 107) (= i 75)) (print "it's a k, add 31"))
+   ((or (= i 108) (= i 76)) (print "it's an l, add 37"))
+   ((or (= i 109) (= i 77)) (print "it's an m, add 41"))
+   ((or (= i 110) (= i 78)) (print "it's an n, add 43"))
+   ((or (= i 111) (= i 79)) (print "it's an o, add 47"))
+   ((or (= i 112) (= i 80)) (print "it's a p, add 53"))
+   ((or (= i 113) (= i 81)) (print "it's a q, add 59"))
+   ((or (= i 114) (= i 82)) (print "it's a r, add 61"))
+   ((or (= i 115) (= i 83)) (print "it's an s, add 67"))
+   ((or (= i 116) (= i 84)) (print "it's a t, add 71"))
+   ((or (= i 117) (= i 85)) (print "it's a u, add 73"))
+   ((or (= i 118) (= i 86)) (print "it's a v, add 79"))
+   ((or (= i 119) (= i 87)) (print "it's a w, add 83"))
+   ((or (= i 120) (= i 88)) (print "it's an x, add 89"))
+   ((or (= i 121) (= i 89)) (print "it's a y, add 97"))
+   ((or (= i 122) (= i 90)) (print "it's a z, add 101"))
+   ((= i 48) (print "it's a zero, add 103"))
+   ((= i 49) (print "it's a one, add 107"))
+   ((= i 50) (print "it's a two, add 109"))
+   ((= i 51) (print "it's a three, add 113"))
+   ((= i 52) (print "it's a four, add 127"))
+   ((= i 53) (print "it's a five, add 131"))
+   ((= i 54) (print "it's a six, add 137"))
+   ((= i 55) (print "it's a seven, add 139"))
+   ((= i 56) (print "it's an eight, add 149"))
+   ((= i 57) (print "it's a nine, add 151"))))
